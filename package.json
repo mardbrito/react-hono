@@ -3,7 +3,9 @@
   "scripts": {
     "client": "cd client && bun run dev",
     "server": "bun run --hot server/index.ts",
-    "dev": "concurrently \"bun run server\" \"bun run client\""
+    "dev": "concurrently \"bun run server\" \"bun run client\"",
+    "build": "bun build ./server/index.ts --outdir ./dist --target bun && cd client && bun run build",
+    "start": "bun run dist/index.js"
   },
   "dependencies": {
     "hono": "^4.9.4"
