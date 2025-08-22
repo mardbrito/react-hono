@@ -4,7 +4,7 @@ import { serveStatic } from "hono/bun";
 const app = new Hono();
 
 const route = app
-  .use("*", serveStatic({ path: "./client/dist" }))
+  .use("/*", serveStatic({ root: "./client/dist" }))
   .get("/api/books", (c) => {
     return c.json([
       { id: 1, title: "1984", author: "George Orwell" },

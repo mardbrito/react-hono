@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { type AppType } from "../../server/index";
-import { hc, type InferResponseType } from "hono/client";
+import { AppType } from "../../server/index";
+import { hc, InferResponseType } from "hono/client";
 
 const client = hc<AppType>("/");
 
